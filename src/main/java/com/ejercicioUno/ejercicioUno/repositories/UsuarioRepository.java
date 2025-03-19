@@ -5,9 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import org.springframework.stereotype.Repository;
-
 import com.ejercicioUno.ejercicioUno.models.Producto;
 
 @Repository
@@ -78,7 +76,7 @@ public class UsuarioRepository {
     }
     
     // Buscar usuarios por filtros
-    public List<Producto> buscarPorFiltros(String categoria) {
+    public List<Producto> findForFilter(String categoria) {
         return baseDeDatos.values().stream()
                 .filter(u -> categoria == null || u.getCategoria().contains(categoria))
                 .collect(Collectors.toList());
