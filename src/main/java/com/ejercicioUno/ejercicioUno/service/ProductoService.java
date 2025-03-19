@@ -1,17 +1,20 @@
 package com.ejercicioUno.ejercicioUno.service;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.ejercicioUno.ejercicioUno.models.Producto;
+import com.ejercicioUno.ejercicioUno.repositories.UsuarioRepository;
 
-public class ProductoServicio {
+public class ProductoService implements IProductoService {
 
     private final UsuarioRepository usuarioRepository;
 
     @Autowired
-    public ProductoServicio(UsuarioRepository usuarioRepository) {
+    public ProductoService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Producto Save(Producto producto){
+    public Producto save(Producto producto){
         return usuarioRepository.save(producto);
     }
 
@@ -27,5 +30,11 @@ public class ProductoServicio {
         return usuarioRepository.findForFilter(categoria);
     }
 
+    public Producto update(Producto producto){
+        return usuarioRepository.update(producto);
+    }
 
+    public void delete(String id){
+        usuarioRepository.deleteById(id);
+    }
 }
