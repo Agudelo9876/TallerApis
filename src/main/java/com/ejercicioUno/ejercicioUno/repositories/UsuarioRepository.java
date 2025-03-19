@@ -78,7 +78,7 @@ public class UsuarioRepository {
     }
     
     // Buscar usuarios por filtros
-    public List<Producto> buscarPorFiltros(String categoria) {
+    public List<Producto> findForFilter(String categoria) {
         return baseDeDatos.values().stream()
                 .filter(u -> categoria == null || u.getCategoria().contains(categoria))
                 .collect(Collectors.toList());
@@ -105,5 +105,5 @@ public class UsuarioRepository {
         accesosUsuario.add(0, nuevoAcceso); // Añadir al principio (más reciente)
         accesos.put(id, accesosUsuario);
     }
-    }
+}
 

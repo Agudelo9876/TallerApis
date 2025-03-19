@@ -1,7 +1,14 @@
 package com.ejercicioUno.ejercicioUno.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ejercicioUno.ejercicioUno.models.Producto;
+import com.ejercicioUno.ejercicioUno.repositories.UsuarioRepository;
+
+@Service
 public class ProductoServicio {
 
     private final UsuarioRepository usuarioRepository;
